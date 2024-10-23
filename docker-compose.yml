@@ -38,6 +38,8 @@ services:
   hnt-app:
     build: ./
     container_name: hnt-app
+    ports:
+      - "9191:9191"
     networks:
       - bridgeNetwork
     depends_on:
