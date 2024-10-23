@@ -1,6 +1,7 @@
 package hnt.spring.kafka.service;
 
 import hnt.spring.kafka.dto.CustomerAvro;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -46,7 +47,9 @@ public class KafkaMessageListener {
 //    }
 
     @KafkaListener(topics = "kafka-topic-avro", groupId = "group-1")
-    public void consume(CustomerAvro customerAvro) {
-        logger.info("Avro Consumer consume message {}", customerAvro);
+    public void read(ConsumerRecord<String, CustomerAvro> consumerRecord) {
+        String key = consumerRecord.key();
+        CustomerAvro customerAvro = consumerRecord.value();
+        logger.info("Avro message received for key : {} value : {}" , key, customerAvro.toString());
     }
 }
