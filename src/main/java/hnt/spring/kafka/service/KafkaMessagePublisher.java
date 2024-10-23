@@ -48,14 +48,17 @@ public class KafkaMessagePublisher {
             CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send("kafka-topic-avro", customer);
             future.whenComplete((result, ex) -> {
                 if (ex == null) {
-                    System.out.println("Object " + customer.toString() + " sent successfully with offset [" + result.getRecordMetadata().offset() + "]"
-                            + " in partition [" + result.getRecordMetadata().partition() + "]");
+                    System.out.println("Sent message=[" + customer +
+                            "] with offset=[" + result.getRecordMetadata().offset() + "]");
                 } else {
-                    System.out.println("CustomerDTO sent with error [" + ex.getMessage() + "]");
+                    System.out.println("Unable to send message=[" +
+                            customer + "] due to : " + ex.getMessage());
                 }
             });
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+
 }
