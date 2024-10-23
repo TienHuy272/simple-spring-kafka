@@ -35,6 +35,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.apache.avro:avro-maven-plugin:1.11.3'
+	// https://mvnrepository.com/artifact/org.apache.avro/avro
+	implementation 'org.apache.avro:avro:1.11.4'
+
 	implementation group: 'io.confluent', name: 'kafka-schema-registry-client', version: '7.4.0'
 	implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '7.4.0'
 }
