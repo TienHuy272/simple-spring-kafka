@@ -17,10 +17,14 @@ spring:
 #      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         schema.registry.url: http://localhost:8081
+        specific:
+          avro:
+            reader: "true"
         spring:
           json:
             trusted:
               packages: "*"
+
 
 server:
   port: 9191

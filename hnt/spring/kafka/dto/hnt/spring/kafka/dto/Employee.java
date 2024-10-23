@@ -13,26 +13,26 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4918264616678218010L;
+public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 4109984008910930528L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerAvro\",\"namespace\":\"hnt.spring.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"email1\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"hnt.spring.kafka.dto\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"email1\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<CustomerAvro> ENCODER =
-      new BinaryMessageEncoder<CustomerAvro>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<Employee> ENCODER =
+      new BinaryMessageEncoder<Employee>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<CustomerAvro> DECODER =
-      new BinaryMessageDecoder<CustomerAvro>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<Employee> DECODER =
+      new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<CustomerAvro> getEncoder() {
+  public static BinaryMessageEncoder<Employee> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<CustomerAvro> getDecoder() {
+  public static BinaryMessageDecoder<Employee> getDecoder() {
     return DECODER;
   }
 
@@ -49,12 +49,12 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<CustomerAvro> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<CustomerAvro>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<Employee> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<Employee>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this CustomerAvro to a ByteBuffer.
+   * Serializes this Employee to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -63,12 +63,12 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
-   * Deserializes a CustomerAvro from a ByteBuffer.
+   * Deserializes a Employee from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a CustomerAvro instance decoded from the given buffer
+   * @return a Employee instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static CustomerAvro fromByteBuffer(
+  public static Employee fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -83,7 +83,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public CustomerAvro() {}
+  public Employee() {}
 
   /**
    * All-args constructor.
@@ -92,7 +92,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
    * @param email The new value for email
    * @param email1 The new value for email1
    */
-  public CustomerAvro(java.lang.Integer id, java.lang.String name, java.lang.String email, java.lang.String email1) {
+  public Employee(java.lang.Integer id, java.lang.String name, java.lang.String email, java.lang.String email1) {
     this.id = id;
     this.name = name;
     this.email = email;
@@ -193,45 +193,45 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
-   * Creates a new CustomerAvro RecordBuilder.
-   * @return A new CustomerAvro RecordBuilder
+   * Creates a new Employee RecordBuilder.
+   * @return A new Employee RecordBuilder
    */
-  public static hnt.spring.kafka.dto.CustomerAvro.Builder newBuilder() {
-    return new hnt.spring.kafka.dto.CustomerAvro.Builder();
+  public static hnt.spring.kafka.dto.Employee.Builder newBuilder() {
+    return new hnt.spring.kafka.dto.Employee.Builder();
   }
 
   /**
-   * Creates a new CustomerAvro RecordBuilder by copying an existing Builder.
+   * Creates a new Employee RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new CustomerAvro RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static hnt.spring.kafka.dto.CustomerAvro.Builder newBuilder(hnt.spring.kafka.dto.CustomerAvro.Builder other) {
+  public static hnt.spring.kafka.dto.Employee.Builder newBuilder(hnt.spring.kafka.dto.Employee.Builder other) {
     if (other == null) {
-      return new hnt.spring.kafka.dto.CustomerAvro.Builder();
+      return new hnt.spring.kafka.dto.Employee.Builder();
     } else {
-      return new hnt.spring.kafka.dto.CustomerAvro.Builder(other);
+      return new hnt.spring.kafka.dto.Employee.Builder(other);
     }
   }
 
   /**
-   * Creates a new CustomerAvro RecordBuilder by copying an existing CustomerAvro instance.
+   * Creates a new Employee RecordBuilder by copying an existing Employee instance.
    * @param other The existing instance to copy.
-   * @return A new CustomerAvro RecordBuilder
+   * @return A new Employee RecordBuilder
    */
-  public static hnt.spring.kafka.dto.CustomerAvro.Builder newBuilder(hnt.spring.kafka.dto.CustomerAvro other) {
+  public static hnt.spring.kafka.dto.Employee.Builder newBuilder(hnt.spring.kafka.dto.Employee other) {
     if (other == null) {
-      return new hnt.spring.kafka.dto.CustomerAvro.Builder();
+      return new hnt.spring.kafka.dto.Employee.Builder();
     } else {
-      return new hnt.spring.kafka.dto.CustomerAvro.Builder(other);
+      return new hnt.spring.kafka.dto.Employee.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for CustomerAvro instances.
+   * RecordBuilder for Employee instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<CustomerAvro>
-    implements org.apache.avro.data.RecordBuilder<CustomerAvro> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Employee>
+    implements org.apache.avro.data.RecordBuilder<Employee> {
 
     private int id;
     private java.lang.String name;
@@ -247,7 +247,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(hnt.spring.kafka.dto.CustomerAvro.Builder other) {
+    private Builder(hnt.spring.kafka.dto.Employee.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -268,10 +268,10 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
     }
 
     /**
-     * Creates a Builder by copying an existing CustomerAvro instance
+     * Creates a Builder by copying an existing Employee instance
      * @param other The existing instance to copy.
      */
-    private Builder(hnt.spring.kafka.dto.CustomerAvro other) {
+    private Builder(hnt.spring.kafka.dto.Employee other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -305,7 +305,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder setId(int value) {
+    public hnt.spring.kafka.dto.Employee.Builder setId(int value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -325,7 +325,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder clearId() {
+    public hnt.spring.kafka.dto.Employee.Builder clearId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -344,7 +344,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder setName(java.lang.String value) {
+    public hnt.spring.kafka.dto.Employee.Builder setName(java.lang.String value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -364,7 +364,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder clearName() {
+    public hnt.spring.kafka.dto.Employee.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -384,7 +384,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder setEmail(java.lang.String value) {
+    public hnt.spring.kafka.dto.Employee.Builder setEmail(java.lang.String value) {
       validate(fields()[2], value);
       this.email = value;
       fieldSetFlags()[2] = true;
@@ -404,7 +404,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder clearEmail() {
+    public hnt.spring.kafka.dto.Employee.Builder clearEmail() {
       email = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -424,7 +424,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * @param value The value of 'email1'.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder setEmail1(java.lang.String value) {
+    public hnt.spring.kafka.dto.Employee.Builder setEmail1(java.lang.String value) {
       validate(fields()[3], value);
       this.email1 = value;
       fieldSetFlags()[3] = true;
@@ -444,7 +444,7 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
       * Clears the value of the 'email1' field.
       * @return This builder.
       */
-    public hnt.spring.kafka.dto.CustomerAvro.Builder clearEmail1() {
+    public hnt.spring.kafka.dto.Employee.Builder clearEmail1() {
       email1 = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -452,9 +452,9 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
 
     @Override
     @SuppressWarnings("unchecked")
-    public CustomerAvro build() {
+    public Employee build() {
       try {
-        CustomerAvro record = new CustomerAvro();
+        Employee record = new Employee();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         record.email = fieldSetFlags()[2] ? this.email : (java.lang.String) defaultValue(fields()[2]);
@@ -469,8 +469,8 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<CustomerAvro>
-    WRITER$ = (org.apache.avro.io.DatumWriter<CustomerAvro>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<Employee>
+    WRITER$ = (org.apache.avro.io.DatumWriter<Employee>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -478,8 +478,8 @@ public class CustomerAvro extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<CustomerAvro>
-    READER$ = (org.apache.avro.io.DatumReader<CustomerAvro>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<Employee>
+    READER$ = (org.apache.avro.io.DatumReader<Employee>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

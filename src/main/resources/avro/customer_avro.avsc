@@ -15,6 +15,11 @@
       "name": "email",
       "type": "string",
       "default": ""
+    },
+    {
+      "name": "email1",
+      "type": "string",
+      "default": ""
     }
   ]
 }
