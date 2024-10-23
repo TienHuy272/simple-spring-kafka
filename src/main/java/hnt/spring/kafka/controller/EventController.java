@@ -1,6 +1,7 @@
 package hnt.spring.kafka.controller;
 
 import hnt.spring.kafka.dto.Customer;
+import hnt.spring.kafka.dto.CustomerAvro;
 import hnt.spring.kafka.service.KafkaMessagePublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,5 +28,10 @@ public class EventController {
     @PostMapping("/publish")
     public void sendEvents(@RequestBody Customer customer) {
         publisher.sendEventToTopic(customer);
+    }
+
+    @PostMapping("/avro/publish")
+    public void sendEvents(@RequestBody CustomerAvro customer) {
+        publisher.sendEventToTopicAvro(customer);
     }
 }

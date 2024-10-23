@@ -1,0 +1,20 @@
+{
+  "namespace": "hnt.spring.kafka.dto",
+  "type": "record",
+  "name": "CustomerAvro",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "default": ""
+    }
+  ]
+}

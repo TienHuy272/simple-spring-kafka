@@ -1,6 +1,7 @@
 package hnt.spring.kafka.service;
 
 import hnt.spring.kafka.dto.Customer;
+import hnt.spring.kafka.dto.CustomerAvro;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -29,6 +30,22 @@ public class KafkaMessagePublisher {
     public void sendEventToTopic(Customer customer) {
         try {
             CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send("kafka-topic-003", customer);
+            future.whenComplete((result, ex) -> {
+                if (ex == null) {
+                    System.out.println("Object " + customer.toString() + " sent successfully with offset [" + result.getRecordMetadata().offset() + "]"
+                            + " in partition [" + result.getRecordMetadata().partition() + "]");
+                } else {
+                    System.out.println("CustomerDTO sent with error [" + ex.getMessage() + "]");
+                }
+            });
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void sendEventToTopicAvro(CustomerAvro customer) {
+        try {
+            CompletableFuture<SendResult<String, Object>> future = kafkaTemplate.send("kafka-topic-avro", customer);
             future.whenComplete((result, ex) -> {
                 if (ex == null) {
                     System.out.println("Object " + customer.toString() + " sent successfully with offset [" + result.getRecordMetadata().offset() + "]"
